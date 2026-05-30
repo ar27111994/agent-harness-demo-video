@@ -1,8 +1,11 @@
 {
   "name": "agent-harness-demo-video",
   "version": "1.0.0",
-  "description": "My Remotion video",
-  "repository": {},
+  "description": "Remotion product demo video for agent-harness",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ar27111994/agent-harness-demo-video.git"
+  },
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
@@ -24,10 +27,18 @@
   "scripts": {
     "dev": "remotion studio",
     "build": "remotion bundle",
+    "render": "remotion render AgentHarnessProductDemo out/agent-harness-product-demo.mp4",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc"
   },
   "sideEffects": [
     "*.css"
-  ]
+  ],
+  "allowScripts": {
+    "esbuild@0.28.0": true
+  },
+  "bugs": {
+    "url": "https://github.com/ar27111994/agent-harness-demo-video/issues"
+  },
+  "homepage": "https://github.com/ar27111994/agent-harness-demo-video#readme"
 }

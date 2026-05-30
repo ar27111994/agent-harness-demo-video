@@ -1,18 +1,19 @@
 import "./index.css";
+
 import { Composition } from "remotion";
-import { MyComposition } from "./Composition";
+
+import { AgentHarnessDemo } from "./Composition";
+import { videoMeta } from "./story";
 
 export const RemotionRoot: React.FC = () => {
   return (
-    <>
-      <Composition
-        id="MyComp"
-        component={MyComposition}
-        durationInFrames={60}
-        fps={30}
-        width={1280}
-        height={720}
-      />
-    </>
+    <Composition
+      id="AgentHarnessProductDemo"
+      component={AgentHarnessDemo}
+      durationInFrames={videoMeta.durationInSeconds * videoMeta.fps}
+      fps={videoMeta.fps}
+      width={videoMeta.width}
+      height={videoMeta.height}
+    />
   );
 };
