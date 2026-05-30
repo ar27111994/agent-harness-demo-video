@@ -1,3 +1,4 @@
+import { Buffer } from "node:buffer";
 import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 
@@ -20,10 +21,11 @@ function noteFrequency(midi) {
 function softTone(t, midi, gain) {
   const f = noteFrequency(midi);
   return (
-    Math.sin(2 * Math.PI * f * t) * 0.58 +
-    Math.sin(2 * Math.PI * f * 2 * t) * 0.18 +
-    Math.sin(2 * Math.PI * f * 0.5 * t) * 0.24
-  ) * gain;
+    (Math.sin(2 * Math.PI * f * t) * 0.58 +
+      Math.sin(2 * Math.PI * f * 2 * t) * 0.18 +
+      Math.sin(2 * Math.PI * f * 0.5 * t) * 0.24) *
+    gain
+  );
 }
 
 function pluck(t, start, midi, gain) {
@@ -59,11 +61,18 @@ for (let i = 0; i < frames; i += 1) {
   sample += pluck(t, beatStart, lead[beat % lead.length], 0.05);
   sample += pluck(t, beatStart + 0.25, lead[(beat + 3) % lead.length], 0.025);
 
-  const shimmer = Math.sin(2 * Math.PI * 880 * t) * Math.sin(2 * Math.PI * 0.07 * t) * 0.01;
+  const shimmer =
+    Math.sin(2 * Math.PI * 880 * t) * Math.sin(2 * Math.PI * 0.07 * t) * 0.01;
   sample = (sample + shimmer) * env;
 
   const left = Math.max(-1, Math.min(1, sample * 0.88));
-  const right = Math.max(-1, Math.min(1, sample * 0.78 + Math.sin(2 * Math.PI * 0.11 * t) * sample * 0.08));
+  const right = Math.max(
+    -1,
+    Math.min(
+      1,
+      sample * 0.78 + Math.sin(2 * Math.PI * 0.11 * t) * sample * 0.08,
+    ),
+  );
   pcm.writeInt16LE(Math.round(left * 32767), i * 4);
   pcm.writeInt16LE(Math.round(right * 32767), i * 4 + 2);
 }

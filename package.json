@@ -29,7 +29,10 @@
     "build": "remotion bundle",
     "render": "remotion render AgentHarnessProductDemo out/agent-harness-product-demo.mp4",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . && tsc",
+    "lint:fix": "eslint . --fix"
   },
   "sideEffects": [
     "*.css"

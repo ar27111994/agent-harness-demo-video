@@ -32,30 +32,86 @@ export const hostAdapters = [
     command: "workspace vscode",
     icons: ["visualstudiocode.svg", "githubcopilot.svg"],
   },
-  { id: "opencode", label: "OpenCode", command: "workspace opencode", icons: ["opencode-wordmark.svg"] },
-  { id: "cursor", label: "Cursor", command: "workspace cursor", icons: ["cursor.svg"] },
-  { id: "zed", label: "Zed", command: "workspace zed", icons: ["zedindustries.svg"] },
-  { id: "claude", label: "Claude Code", command: "workspace claude-code", icons: ["claude.svg"] },
-  { id: "pi", label: "Pi", command: "workspace pi", icons: ["pi-wordmark.svg"] },
-  { id: "codex", label: "OpenAI Codex", command: "workspace codex", icons: ["openai.svg"] },
+  {
+    id: "opencode",
+    label: "OpenCode",
+    command: "workspace opencode",
+    icons: ["opencode-wordmark.svg"],
+  },
+  {
+    id: "cursor",
+    label: "Cursor",
+    command: "workspace cursor",
+    icons: ["cursor.svg"],
+  },
+  {
+    id: "zed",
+    label: "Zed",
+    command: "workspace zed",
+    icons: ["zedindustries.svg"],
+  },
+  {
+    id: "claude",
+    label: "Claude Code",
+    command: "workspace claude-code",
+    icons: ["claude.svg"],
+  },
+  {
+    id: "pi",
+    label: "Pi",
+    command: "workspace pi",
+    icons: ["pi-wordmark.svg"],
+  },
+  {
+    id: "codex",
+    label: "OpenAI Codex",
+    command: "workspace codex",
+    icons: ["openai.svg"],
+  },
 ] as const;
 
 export const commandGroups = [
   {
     title: "Discover",
-    commands: ["discover demand-profile", "discover sources", "discover sync", "discover catalog", "discover select", "discover enrich"],
+    commands: [
+      "discover demand-profile",
+      "discover sources",
+      "discover sync",
+      "discover catalog",
+      "discover select",
+      "discover enrich",
+    ],
   },
   {
     title: "Recommend",
-    commands: ["recommend report", "recommend ai-review", "recommend explain", "recommend evaluate"],
+    commands: [
+      "recommend report",
+      "recommend ai-review",
+      "recommend explain",
+      "recommend evaluate",
+    ],
   },
   {
     title: "Mirror + Stage",
-    commands: ["mirror plan", "mirror locks", "mirror acquire", "stage bundle", "stage native", "stage diff"],
+    commands: [
+      "mirror plan",
+      "mirror locks",
+      "mirror acquire",
+      "stage bundle",
+      "stage native",
+      "stage diff",
+    ],
   },
   {
     title: "Activate + Wire",
-    commands: ["activate host", "activate rollback", "wire opencode", "wire cursor", "wire zed", "setup doctor"],
+    commands: [
+      "activate host",
+      "activate rollback",
+      "wire opencode",
+      "wire cursor",
+      "wire zed",
+      "setup doctor",
+    ],
   },
 ] as const;
 
@@ -113,11 +169,23 @@ export const outputTree = [
 ] as const;
 
 export const safetyBoundaries = [
-  { label: "Preview first", detail: "project-local writes stay reviewable before trust" },
+  {
+    label: "Preview first",
+    detail: "project-local writes stay reviewable before trust",
+  },
   { label: "Explicit trust", detail: "quarantine approval is never silent" },
-  { label: "No surprise installs", detail: "native tools and logins remain user decisions" },
-  { label: "Policy visible", detail: "environment overrides and state roots stay inspectable" },
-  { label: "Optional intelligence", detail: "AI enrichment can be manual or disabled" },
+  {
+    label: "No surprise installs",
+    detail: "native tools and logins remain user decisions",
+  },
+  {
+    label: "Policy visible",
+    detail: "environment overrides and state roots stay inspectable",
+  },
+  {
+    label: "Optional intelligence",
+    detail: "AI enrichment can be manual or disabled",
+  },
 ] as const;
 
 export const communityPrompts = [
@@ -127,7 +195,12 @@ export const communityPrompts = [
   "Where are recommendations noisy or wrong?",
 ] as const;
 
-export const feedbackChannels = ["GitHub issues", "GitHub discussions", "adapter requests", "workspace reports"] as const;
+export const feedbackChannels = [
+  "GitHub issues",
+  "GitHub discussions",
+  "adapter requests",
+  "workspace reports",
+] as const;
 
 export const voiceoverScript = `agent-harness is for developers who are tired of copying agent prompts and setup files by hand.
 
