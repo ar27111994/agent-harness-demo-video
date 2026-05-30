@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/ar27111994/agent-harness-demo-video.git"
   },
-  "license": "UNLICENSED",
+  "license": "SEE LICENSE IN LICENSE.md",
   "private": true,
   "dependencies": {
     "@remotion/cli": "4.0.468",

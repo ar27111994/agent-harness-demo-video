@@ -56,3 +56,9 @@ See:
 
 - `public/audio/ATTRIBUTION.md`
 - `public/brand/hosts/ATTRIBUTION.md`
+
+## License
+
+See `LICENSE.md`.
+
+Code is MIT licensed. Demo copy, generated voiceover/music, rendered video outputs, and third-party marks have separate restrictions described in the license file.
