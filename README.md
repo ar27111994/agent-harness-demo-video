@@ -4,15 +4,21 @@ A standalone Remotion project for the `agent-harness` product demo video.
 
 The video positions `agent-harness` as a reviewable lifecycle for reusable AI-agent assets: discover demand, load sources, build a catalog, rank recommendations, mirror assets, stage project-local files, activate host views, and wire supported editors only after review.
 
-## Current artifact
+## Current artifacts
 
-The rendered video is generated locally at:
+The sound-on walkthrough renders locally at:
 
 ```console
 out/agent-harness-product-demo.mp4
 ```
 
-`out/` is intentionally ignored by Git so the repository stays source-focused.
+The README hero preview is a committed, muted, looping GIF generated from crossfaded sections of that render:
+
+```console
+media/readme/agent-harness-readme-preview.gif
+```
+
+`out/` is intentionally ignored by Git so the repository stays source-focused. The README GIF is committed because GitHub READMEs autoplay GIFs reliably while stripping `<video>` and `<iframe>` tags.
 
 ## Story arc
 
@@ -30,6 +36,7 @@ npm install
 npm run dev
 npm run lint
 npm run render
+npm run render:readme-preview
 ```
 
 ## Source layout
@@ -40,6 +47,7 @@ npm run render
 - `public/audio/` — original generated music bed and attribution.
 - `public/brand/hosts/` — host marks/wordmarks and attribution.
 - `scripts/make-music-bed.mjs` — deterministic local music-bed generator.
+- `scripts/render-readme-preview.mjs` — uses `ffmpeg-static` to render the crossfaded README GIF from the sound-on video.
 
 ## QA status
 
